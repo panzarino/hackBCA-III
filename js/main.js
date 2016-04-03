@@ -41,7 +41,7 @@ var mainState = {
         game.physics.arcade.overlap(this.player, this.spikes, this.restart)
         game.physics.arcade.collide(this.player, this.ground);
         game.physics.arcade.collide(this.player, this.platforms, this.moveUp);
-        if (this.spaceKey.isDown && this.player.body.touching.down){
+        if ((this.spaceKey.isDown || game.input.pointer1.isDown) && this.player.body.touching.down){
             this.player.body.velocity.y = -415;
             this.jumpSound.play();
         }
